@@ -162,6 +162,7 @@ body {
     padding-left: 10px;
     font-size: 20px;
     color: gray;
+    cursor: pointer;
 }
 
 .box-finestra-chat {
@@ -174,6 +175,28 @@ body {
 .box-finestra-chat .finestra {
     max-height: 500px;
     overflow-y: auto;
+}
+
+.box-finestra-chat .finestra .messaggio {
+    width: 250px;
+    padding: 20px;
+    background-color: green;
+    border-radius: 15px;
+    margin: 10px 0;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.box-finestra-chat .finestra .inviato {
+    background-color: rgb(35, 161, 35);
+    float: right;
+    clear: both;
+}
+
+.box-finestra-chat .finestra .ricevuto {
+    background-color: lightgrey;
+    float: left;
+    clear: both;
 }
 
 .barra-scrittura {
@@ -193,5 +216,6 @@ body {
 .barra-scrittura i {
     color: grey;
     font-size: 30px;
+    cursor: pointer;
 }
 

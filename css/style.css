@@ -96,19 +96,24 @@ body {
     background-color: #eeeeee;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    position: relative;
 }
 
 .search-bar input {
-    width: 90%;
+    width: 95%;
     height: 60%;
-    padding-left: 10px;
-    padding: 5px;
+    padding-left: 40px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
 }
 
 .search-bar i {
     color: grey;
     cursor: pointer;
+    position: absolute;
+    left: 20px;
 }
 
 

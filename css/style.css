@@ -165,13 +165,13 @@ body {
 }
 
 .box-finestra-chat {
-    width: 100%;
+    max-width: 800px;
     height: 492px;
-    background-color: grey;
+    background-image: url(../img/mine.jpg);
+    overflow: hidden;
 }
 
 .box-finestra-chat .finestra {
-    width: 100%;
     overflow-y: auto;
 }
 

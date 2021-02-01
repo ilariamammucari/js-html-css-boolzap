@@ -73,6 +73,7 @@ body {
 .notifiche .testo {
     display: flex;
     flex-direction: column;
+    padding-left: 8px;
 }
 
 .notifiche .testo small {
@@ -105,6 +106,19 @@ body {
     height: 500px;
     background-color: #fff;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.box-contatti img {
+    width: 50px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.box-contatti .contatto {
+    padding: 10px 0 10px 10px;
+    border-bottom: 1px solid lightgrey;
 }
 
 

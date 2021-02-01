@@ -13,7 +13,6 @@ body {
 }
 
 .container {
-    width: 100%;
     display: flex;
     justify-content: center;
     margin-top: 30px;
@@ -24,8 +23,8 @@ body {
 .header-sx {
     width: 500px;
     height: 80px;
-    background-color: lightgrey;
-    border: 1px solid grey;
+    background-color: #eeeeee;
+    border: 1px solid lightgrey;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -49,6 +48,7 @@ body {
 
 .header-sx .icone-header i {
     padding-left: 10px;
+    cursor: pointer;
 }
 
 
@@ -68,6 +68,7 @@ body {
     background-color: #fff;
     border-radius: 50%;
     margin: 20px 0;
+    cursor: pointer;
 }
 
 .notifiche .testo {
@@ -120,6 +121,11 @@ body {
 .box-contatti .contatto {
     padding: 10px 0 10px 10px;
     border-bottom: 1px solid lightgrey;
+    cursor: pointer;
+}
+
+.box-contatti .contatto:hover {
+    background-color: #eeeeee;
 }
 
 
@@ -127,8 +133,8 @@ body {
 .header-dx {
     width: 800px;
     height: 80px;
-    background-color: lightgrey;
-    border: 1px solid grey;
+    background-color: #eeeeee;
+    border: 1px solid lightgrey;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -201,8 +207,8 @@ body {
 
 .barra-scrittura {
     width: 100%;
-    height: 80px;
-    background-color: lightgrey;
+    height: 82px;
+    background-color: #eeeeee;
     display: flex;
     justify-content: space-around;
     align-items: center;

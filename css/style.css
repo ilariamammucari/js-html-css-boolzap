@@ -99,11 +99,12 @@ body {
 
 .search-bar i {
     color: grey;
+    cursor: pointer;
 }
 
 .box-contatti {
     width: 100%;
-    height: 500px;
+    max-height: 450px;
     background-color: #fff;
     overflow-y: auto;
     display: flex;
@@ -128,17 +129,56 @@ body {
     height: 80px;
     background-color: lightgrey;
     border: 1px solid grey;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-dx .avatar-contatto {
+    display: flex;
+    padding-left: 10px;
+}
+
+.header-dx .avatar-contatto img {
+    width: 60px;
+    border-radius: 50%;
+}
+
+.header-dx .avatar-contatto .dati-contatto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+}
+
+.header-dx .avatar-contatto .dati-contatto small {
+    color: grey;
+}
+
+.header-dx .icone-contatto {
+    padding-right: 10px;
+}
+.header-dx .icone-contatto i {
+    padding-left: 10px;
+    font-size: 20px;
+    color: gray;
 }
 
 .box-finestra-chat {
     width: 100%;
-    height: 550px;
+    height: 492px;
     background-color: grey;
 }
 
 .box-finestra-chat .finestra {
+    width: 100%;
     overflow-y: auto;
 }
+
+.box-finestra-chat .finestra img {
+    height: 100%;
+}
+
 
 .barra-scrittura {
     width: 100%;

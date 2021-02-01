@@ -13,6 +13,8 @@ body {
 }
 
 .container {
+    max-width: 1170px;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     margin-top: 30px;
@@ -21,7 +23,7 @@ body {
 
 /* * box sx */
 .header-sx {
-    width: 500px;
+    width: 400px;
     height: 80px;
     background-color: #eeeeee;
     border: 1px solid lightgrey;
@@ -54,6 +56,7 @@ body {
 
 .notifiche {
     width: 100%;
+    height: 80px;
     background-color: skyblue;
     display: flex;
     align-items: center;
@@ -84,6 +87,7 @@ body {
 
 .search-bar {
     width: 100%;
+    height: 50px;
     background-color: #eeeeee;
     display: flex;
     align-items: center;
@@ -95,7 +99,6 @@ body {
     height: 60%;
     padding-left: 10px;
     padding: 5px;
-    margin: 10px 0;
 }
 
 .search-bar i {
@@ -105,6 +108,7 @@ body {
 
 .box-contatti {
     width: 100%;
+    height: calc(100% - 80px - 80px - 50px);
     max-height: 450px;
     background-color: #fff;
     overflow-y: auto;
@@ -172,8 +176,8 @@ body {
 }
 
 .box-finestra-chat {
-    max-width: 800px;
-    height: 500px;
+    width: 100%;
+    height: calc(100% - 80px - 80px);
     background-image: url(../img/mine.jpg);
     overflow: hidden;
 }
@@ -206,8 +210,13 @@ body {
 }
 
 .barra-scrittura {
-    width: 100%;
-    height: 82px;
+    position: sticky;
+    bottom: 0;
+}
+
+.barra-scrittura .campo-testo {
+    width: 800px;
+    height: 80px;
     background-color: #eeeeee;
     display: flex;
     justify-content: space-around;
@@ -216,7 +225,7 @@ body {
 
 .barra-scrittura input {
     width: 80%;
-    height: 50%;
+    padding: 10px;
 }
 
 .barra-scrittura i {

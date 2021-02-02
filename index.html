@@ -56,7 +56,7 @@
 
             <!-- * box contatti -->
             <div class="box-contatti">
-                <div v-for="(utente,index) in utenti" class="contatto">
+                <div @click="chatDinamica(index)" v-for="(utente,index) in utenti" class="contatto">
                     <img :src="utente.avatar" alt="avatar">
                     {{ utente.nome }}
                 </div>
@@ -71,7 +71,7 @@
             <!-- *header dx -->
             <div class="header-dx">
                 <div class="avatar-contatto">
-                    <img src="img/avatar_1.jpg" alt="avatar-contatto">
+                    <img :src="utenti[contatoreUtente].avatar" alt="avatar-contatto">
                     <div class="dati-contatto">
                         Michele
                         <small>Ultimo accesso oggi alle...</small>
@@ -88,36 +88,9 @@
             <!-- * finestra chat dx -->
             <div class="box-finestra-chat">
                 <div class="finestra">
-                    <div class="messaggio inviato">
-                        Ciao
-                        <small>02/02/21 alle 09:40</small>
-                    </div>
-                    <div class="messaggio ricevuto">
-                        Ciao,come stai?
-                        <small>02/02/21 alle 09:40</small>
-                    </div>
-                    <div class="messaggio inviato">
-                        Molto bene
-                        <small>02/02/21 alle 09:40</small>
-                    </div>
-                    <div class="messaggio inviato">
-                        Tu?
-                        <small>02/02/21 alle 09:40</small>
-                    </div>
-                    <div class="messaggio ricevuto">
-                        .....
-                        <small>02/02/21 alle 09:40</small>
-                    </div>
-                    <div class="messaggio inviato">
-                        ......
-                        <small>02/02/21 alle 09:40</small></div>
-                    <div class="messaggio inviato">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore, quasi minus optio, quaerat dolorum earum deserunt temporibus nostrum illum doloremque dolorem voluptatem amet eos nulla fuga voluptate veniam exercitationem eum?
-                        <small>02/02/21 alle 09:40</small>
-                    </div>
-                    <div class="messaggio ricevuto">
-                        .....
-                        <small>02/02/21 alle 09:40</small>
+                    <div v-for="(mex,index) in utenti[contatoreUtente].messaggio" class="messaggio" :class="(mex.stato == 'ricevuto') ? 'ricevuto' : 'inviato'">
+                        {{ mex.testo }}
+                        <small>{{ mex.data }}</small>
                     </div>
                 </div>
             </div>

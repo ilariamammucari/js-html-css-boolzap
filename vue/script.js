@@ -22,6 +22,11 @@ var app = new Vue({
                         data: '02/02/21 alle 09:40',
                         testo: 'Ciao,come stai?',
                         stato: 'ricevuto'
+                    },
+                    {
+                        data: '02/02/21 alle 09:40',
+                        testo: 'Tutto bene! E tu?',
+                        stato: 'inviato'
                     }
                 ]
             },
@@ -56,7 +61,7 @@ var app = new Vue({
                 messaggio: [
                     {
                         data: '02/02/21 alle 09:40',
-                        testo: 'Ciao',
+                        testo: 'Ciao,Come stai?',
                         stato: 'ricevuto'
                     }
                 ]
@@ -80,7 +85,7 @@ var app = new Vue({
                 messaggio: [
                     {
                         data: '02/02/21 alle 09:40',
-                        testo: 'Ciao',
+                        testo: 'Ciao,come stai?',
                         stato: 'inviato'
                     }
                 ]
@@ -97,9 +102,12 @@ var app = new Vue({
                     }
                 ]
             }
-        ]
+        ],
+        contatoreUtente: 0
+    },
+    methods: {
+        chatDinamica(index){
+            this.contatoreUtente = index;
+        }
     }
-
-
-
 });

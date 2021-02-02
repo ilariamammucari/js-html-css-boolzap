@@ -101,6 +101,39 @@ var app = new Vue({
                         stato: 'inviato'
                     }
                 ]
+            },
+            {
+                nome: 'Matteo',
+                avatar: 'img/avatar_8.jpg',
+                messaggio: [
+                    {
+                        data: moment().format('llll'),
+                        testo: 'Ciao',
+                        stato: 'inviato'
+                    }
+                ]
+            },
+            {
+                nome: 'Matteo',
+                avatar: 'img/avatar_8.jpg',
+                messaggio: [
+                    {
+                        data: moment().format('llll'),
+                        testo: 'Ciao',
+                        stato: 'inviato'
+                    }
+                ]
+            },
+            {
+                nome: 'Matteo',
+                avatar: 'img/avatar_8.jpg',
+                messaggio: [
+                    {
+                        data: moment().format('llll'),
+                        testo: 'Ciao',
+                        stato: 'inviato'
+                    }
+                ]
             }
         ],
         contatoreUtente: 0,

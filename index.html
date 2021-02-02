@@ -9,11 +9,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </head>
 <body>
 
     <!-- * container -->
-    <div id="root" class="container">
+    <div id="root"  class="container">
 
         <!-- * contenitore sinistra -->
         <div class="box-left">
@@ -55,12 +56,12 @@
 
             <!-- * box contatti -->
             <div class="box-contatti">
-                <div class="contatto">
-                    <img src="img/avatar_1.jpg" alt="avatar-1">
-                    Michele
+                <div v-for="(user,index) in users" class="contatto">
+                    <img :src="user.avatar" alt="avatar">
+                    {{ user.nome }}
                 </div>
 
-                <div class="contatto">
+                <!-- <div class="contatto">
                     <img src="img/avatar_2.jpg" alt="avatar-2">
                     Fabio
                 </div>
@@ -93,7 +94,7 @@
                 <div class="contatto">
                     <img src="img/avatar_8.jpg" alt="avatar-8">
                     Matteo
-                </div>
+                </div> -->
             </div>
             <!-- * /box contatti -->
         </div>
@@ -122,14 +123,37 @@
             <!-- * finestra chat dx -->
             <div class="box-finestra-chat">
                 <div class="finestra">
-                    <div class="messaggio inviato">Ciao</div>
-                    <div class="messaggio ricevuto">Ciao,come stai?</div>
-                    <div class="messaggio inviato">Molto bene</div>
-                    <div class="messaggio inviato">Tu?</div>
-                    <div class="messaggio ricevuto">.....</div>
-                    <div class="messaggio inviato">......</div>
-                    <div class="messaggio inviato">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore, quasi minus optio, quaerat dolorum earum deserunt temporibus nostrum illum doloremque dolorem voluptatem amet eos nulla fuga voluptate veniam exercitationem eum?</div>
-                    <div class="messaggio ricevuto">.....</div>
+                    <div class="messaggio inviato">
+                        Ciao
+                        <small>02/02/21 alle 09:40</small>
+                    </div>
+                    <div class="messaggio ricevuto">
+                        Ciao,come stai?
+                        <small>02/02/21 alle 09:40</small>
+                    </div>
+                    <div class="messaggio inviato">
+                        Molto bene
+                        <small>02/02/21 alle 09:40</small>
+                    </div>
+                    <div class="messaggio inviato">
+                        Tu?
+                        <small>02/02/21 alle 09:40</small>
+                    </div>
+                    <div class="messaggio ricevuto">
+                        .....
+                        <small>02/02/21 alle 09:40</small>
+                    </div>
+                    <div class="messaggio inviato">
+                        ......
+                        <small>02/02/21 alle 09:40</small></div>
+                    <div class="messaggio inviato">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore, quasi minus optio, quaerat dolorum earum deserunt temporibus nostrum illum doloremque dolorem voluptatem amet eos nulla fuga voluptate veniam exercitationem eum?
+                        <small>02/02/21 alle 09:40</small>
+                    </div>
+                    <div class="messaggio ricevuto">
+                        .....
+                        <small>02/02/21 alle 09:40</small>
+                    </div>
                 </div>
             </div>
             <!-- * /finestra chat dx -->
@@ -152,5 +176,7 @@
         <!-- * /contenitore destra -->
     </div>
     <!-- * /container -->
+
+    <script src="vue/script.js"></script>
 </body>
 </html>

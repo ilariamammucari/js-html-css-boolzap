@@ -17,7 +17,7 @@ body {
     margin: 0 auto;
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 
@@ -210,6 +210,16 @@ body {
     margin: 10px 0;
     margin-right: 20px;
     margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+.box-finestra-chat .finestra .messaggio small {
+    align-self: flex-end;
+    margin-top: 5px;
+    color: gray;
 }
 
 .box-finestra-chat .finestra .inviato {

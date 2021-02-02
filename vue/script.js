@@ -7,7 +7,7 @@ var app = new Vue({
                 avatar: 'img/avatar_1.jpg',
                 messaggio: [
                     {
-                        data: '02/02/21 alle 09:40',
+                        data: dayjs(),
                         testo: 'Ciao',
                         stato: 'inviato'
                     }
@@ -19,12 +19,12 @@ var app = new Vue({
                 avatar: 'img/avatar_2.jpg',
                 messaggio: [
                     {
-                        data: '02/02/21 alle 09:40',
+                        data: dayjs(),
                         testo: 'Ciao,come stai?',
                         stato: 'ricevuto'
                     },
                     {
-                        data: '02/02/21 alle 09:40',
+                        data: dayjs(),
                         testo: 'Tutto bene! E tu?',
                         stato: 'inviato'
                     }
@@ -36,7 +36,7 @@ var app = new Vue({
                 avatar: 'img/avatar_3.jpg',
                 messaggio: [
                     {
-                        data: '02/02/21 alle 09:40',
+                        data: dayjs(),
                         testo: 'Ciao',
                         stato: 'inviato'
                     }
@@ -48,7 +48,7 @@ var app = new Vue({
                 avatar: 'img/avatar_4.jpg',
                 messaggio: [
                     {
-                        data: '02/02/21 alle 09:40',
+                        data: dayjs(),
                         testo: 'Ciao',
                         stato: 'inviato'
                     }
@@ -60,7 +60,7 @@ var app = new Vue({
                 avatar: 'img/avatar_5.jpg',
                 messaggio: [
                     {
-                        data: '02/02/21 alle 09:40',
+                        data: dayjs(),
                         testo: 'Ciao,Come stai?',
                         stato: 'ricevuto'
                     }
@@ -72,7 +72,7 @@ var app = new Vue({
                 avatar: 'img/avatar_6.jpg',
                 messaggio: [
                     {
-                        data: '02/02/21 alle 09:40',
+                        data: dayjs(),
                         testo: 'Ciao',
                         stato: 'inviato'
                     }
@@ -84,7 +84,7 @@ var app = new Vue({
                 avatar: 'img/avatar_7.jpg',
                 messaggio: [
                     {
-                        data: '02/02/21 alle 09:40',
+                        data: dayjs(),
                         testo: 'Ciao,come stai?',
                         stato: 'inviato'
                     }
@@ -96,18 +96,27 @@ var app = new Vue({
                 avatar: 'img/avatar_8.jpg',
                 messaggio: [
                     {
-                        data: '02/02/21 alle 09:40',
+                        data: dayjs(),
                         testo: 'Ciao',
                         stato: 'inviato'
                     }
                 ]
             }
         ],
-        contatoreUtente: 0
+        contatoreUtente: 0,
+        testoInput: ''
     },
     methods: {
         chatDinamica(index){
             this.contatoreUtente = index;
+        },
+        inserimentoInput(){
+            this.utenti[this.contatoreUtente].messaggio.push( {testo: this.testoInput, data: dayjs(), stato: 'inviato'} );
+            this.testoInput = '';
+            setTimeout(this.funzioneRisposta,1000);
+        },
+        funzioneRisposta(){
+            this.utenti[this.contatoreUtente].messaggio.push( {testo: 'ok', data: dayjs(), stato: 'ricevuto'} );
         }
     }
 });

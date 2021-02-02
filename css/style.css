@@ -28,7 +28,6 @@ body {
 .header-sx {
     width: 400px;
     height: 80px;
-    background-color: #eeeeee;
     border: 1px solid lightgrey;
     display: flex;
     align-items: center;
@@ -94,7 +93,6 @@ body {
 .search-bar {
     width: 100%;
     height: 50px;
-    background-color: #eeeeee;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -123,7 +121,6 @@ body {
     width: 100%;
     height: calc(100% - 80px - 80px - 50px);
     max-height: 450px;
-    background-color: #fff;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -142,7 +139,7 @@ body {
 }
 
 .box-contatti .contatto:hover {
-    background-color: #eeeeee;
+    background-color: #fff;
 }
 
 
@@ -152,7 +149,6 @@ body {
 .header-dx {
     width: 800px;
     height: 80px;
-    background-color: #eeeeee;
     border: 1px solid lightgrey;
     display: flex;
     align-items: center;
@@ -245,7 +241,6 @@ body {
 .barra-scrittura .campo-testo {
     width: 800px;
     height: 80px;
-    background-color: #eeeeee;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -260,5 +255,16 @@ body {
     color: grey;
     font-size: 30px;
     cursor: pointer;
+}
+
+/* dark mode */
+.scuro {
+    background-color: black;
+    color: #fff;
+    border: 1px solid black;
+}
+
+.chiaro {
+    background-color: #eeeeee;
 }
 

@@ -20,14 +20,14 @@
         <!-- * contenitore sinistra -->
         <div class="box-left">
             <!-- * header sx -->
-            <div class="header-sx">
+            <div class="header-sx" :class="(dark ? 'scuro' : 'chiaro' )">
                 <div class="avatar-io">
                     <img src="img/avatar_io.jpg" alt="avatar-io">
                     <span>Ilaria Mammucari</span>
                 </div>
 
                 <div class="icone-header">
-                    <i class="fas fa-circle-notch"></i>
+                    <i @click="darkMode" class="fas fa-circle-notch" title="dark mode"></i>
                     <i class="fas fa-comment-alt"></i>
                     <i class="fas fa-ellipsis-v"></i>
                 </div>
@@ -49,14 +49,14 @@
             <!-- * /notifiche -->
 
             <!-- * search bar -->
-            <div class="search-bar">
+            <div class="search-bar" :class="(dark ? 'scuro' : 'chiaro' )">
                 <i class="fas fa-search"></i>
                 <input type="text" placeholder="Cerca o inizia una nuova chat...">
             </div>
             <!-- * /search bar -->
 
             <!-- * box contatti -->
-            <div class="box-contatti">
+            <div class="box-contatti" :class="(dark ? 'scuro' : 'chiaro' )">
                 <div @click="chatDinamica(index)" v-for="(utente,index) in utenti" class="contatto">
                     <img :src="utente.avatar" alt="avatar">
                     {{ utente.nome }}
@@ -70,7 +70,7 @@
         <div class="box-rigth">
 
             <!-- *header dx -->
-            <div class="header-dx">
+            <div class="header-dx" :class="(dark ? 'scuro' : 'chiaro' )">
                 <div class="avatar-contatto">
                     <img :src="utenti[contatoreUtente].avatar" alt="avatar-contatto">
                     <div class="dati-contatto">
@@ -99,7 +99,7 @@
             
             <!-- * barra di scrittura -->
             <div class="barra-scrittura">
-                <div class="campo-testo">
+                <div class="campo-testo" :class="(dark ? 'scuro' : 'chiaro' )">
 
                     <i class="far fa-smile"></i>
     

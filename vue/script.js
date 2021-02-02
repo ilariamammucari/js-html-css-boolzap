@@ -104,7 +104,8 @@ var app = new Vue({
             }
         ],
         contatoreUtente: 0,
-        testoInput: ''
+        testoInput: '',
+        dark: false
     },
     methods: {
         chatDinamica(index){
@@ -117,6 +118,9 @@ var app = new Vue({
         },
         funzioneRisposta(){
             this.utenti[this.contatoreUtente].messaggio.push( {testo: 'ok', data: moment().format('llll'), stato: 'ricevuto'} );
+        },
+        darkMode(){
+            ( this.dark ) ? this.dark = false : this.dark = true;
         }
     }
 });

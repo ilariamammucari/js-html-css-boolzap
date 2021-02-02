@@ -1,7 +1,7 @@
-var app = Vue({
+var app = new Vue({
     el: '#root',
     data: {
-        users: [
+        utenti: [
             {
                 nome: 'Michele',
                 avatar: 'img/avatar_1.jpg',
@@ -101,5 +101,5 @@ var app = Vue({
     }
 
 
-    
+
 });

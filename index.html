@@ -56,45 +56,10 @@
 
             <!-- * box contatti -->
             <div class="box-contatti">
-                <div v-for="(user,index) in users" class="contatto">
-                    <img :src="user.avatar" alt="avatar">
-                    {{ user.nome }}
+                <div v-for="(utente,index) in utenti" class="contatto">
+                    <img :src="utente.avatar" alt="avatar">
+                    {{ utente.nome }}
                 </div>
-
-                <!-- <div class="contatto">
-                    <img src="img/avatar_2.jpg" alt="avatar-2">
-                    Fabio
-                </div>
-
-                <div class="contatto">
-                    <img src="img/avatar_3.jpg" alt="avatar-3">
-                    Samuele
-                </div>
-
-                <div class="contatto">
-                    <img src="img/avatar_4.jpg" alt="avatar-4">
-                    Antonio
-                </div>
-
-                <div class="contatto">
-                    <img src="img/avatar_5.jpg" alt="avatar-5">
-                    Tommaso
-                </div>
-
-                <div class="contatto">
-                    <img src="img/avatar_6.jpg" alt="avatar-6">
-                    Viviana
-                </div>
-
-                <div class="contatto">
-                    <img src="img/avatar_7.jpg" alt="avatar-7">
-                    Luca
-                </div>
-
-                <div class="contatto">
-                    <img src="img/avatar_8.jpg" alt="avatar-8">
-                    Matteo
-                </div> -->
             </div>
             <!-- * /box contatti -->
         </div>

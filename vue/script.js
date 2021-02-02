@@ -7,7 +7,7 @@ var app = new Vue({
                 avatar: 'img/avatar_1.jpg',
                 messaggio: [
                     {
-                        data: dayjs(),
+                        data: moment().format('llll'),
                         testo: 'Ciao',
                         stato: 'inviato'
                     }
@@ -19,12 +19,12 @@ var app = new Vue({
                 avatar: 'img/avatar_2.jpg',
                 messaggio: [
                     {
-                        data: dayjs(),
+                        data: moment().format('llll'),
                         testo: 'Ciao,come stai?',
                         stato: 'ricevuto'
                     },
                     {
-                        data: dayjs(),
+                        data: moment().format('llll'),
                         testo: 'Tutto bene! E tu?',
                         stato: 'inviato'
                     }
@@ -36,7 +36,7 @@ var app = new Vue({
                 avatar: 'img/avatar_3.jpg',
                 messaggio: [
                     {
-                        data: dayjs(),
+                        data: moment().format('llll'),
                         testo: 'Ciao',
                         stato: 'inviato'
                     }
@@ -48,7 +48,7 @@ var app = new Vue({
                 avatar: 'img/avatar_4.jpg',
                 messaggio: [
                     {
-                        data: dayjs(),
+                        data: moment().format('llll'),
                         testo: 'Ciao',
                         stato: 'inviato'
                     }
@@ -60,7 +60,7 @@ var app = new Vue({
                 avatar: 'img/avatar_5.jpg',
                 messaggio: [
                     {
-                        data: dayjs(),
+                        data: moment().format('llll'),
                         testo: 'Ciao,Come stai?',
                         stato: 'ricevuto'
                     }
@@ -72,7 +72,7 @@ var app = new Vue({
                 avatar: 'img/avatar_6.jpg',
                 messaggio: [
                     {
-                        data: dayjs(),
+                        data: moment().format('llll'),
                         testo: 'Ciao',
                         stato: 'inviato'
                     }
@@ -84,7 +84,7 @@ var app = new Vue({
                 avatar: 'img/avatar_7.jpg',
                 messaggio: [
                     {
-                        data: dayjs(),
+                        data: moment().format('llll'),
                         testo: 'Ciao,come stai?',
                         stato: 'inviato'
                     }
@@ -96,7 +96,7 @@ var app = new Vue({
                 avatar: 'img/avatar_8.jpg',
                 messaggio: [
                     {
-                        data: dayjs(),
+                        data: moment().format('llll'),
                         testo: 'Ciao',
                         stato: 'inviato'
                     }
@@ -111,12 +111,12 @@ var app = new Vue({
             this.contatoreUtente = index;
         },
         inserimentoInput(){
-            this.utenti[this.contatoreUtente].messaggio.push( {testo: this.testoInput, data: dayjs(), stato: 'inviato'} );
+            this.utenti[this.contatoreUtente].messaggio.push( {testo: this.testoInput, data: moment().format('llll'), stato: 'inviato'} );
             this.testoInput = '';
             setTimeout(this.funzioneRisposta,1000);
         },
         funzioneRisposta(){
-            this.utenti[this.contatoreUtente].messaggio.push( {testo: 'ok', data: dayjs(), stato: 'ricevuto'} );
+            this.utenti[this.contatoreUtente].messaggio.push( {testo: 'ok', data: moment().format('llll'), stato: 'ricevuto'} );
         }
     }
 });

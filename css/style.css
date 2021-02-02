@@ -145,11 +145,6 @@ body {
     cursor: pointer;
 }
 
-.box-contatti .contatto:hover {
-    background-color: #fff;
-}
-
-
 /* * box dx */
 
 /* ! header dx */
@@ -276,3 +271,10 @@ body {
     background-color: #eeeeee;
 }
 
+.chiaro .contatto:hover {
+    background-color: #fff;
+}
+
+.scuro .contatto:hover {
+    background-color: rgb(34, 131, 34);
+}

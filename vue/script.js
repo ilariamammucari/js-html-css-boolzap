@@ -117,9 +117,6 @@ var app = new Vue({
         valoreInput: '',
         nomi: ''
     },
-    created(){
-        this.ricerca()
-    },
     methods: {
         chatDinamica(index){
             this.contatoreUtente = index;
@@ -136,13 +133,9 @@ var app = new Vue({
             ( this.dark ) ? this.dark = false : this.dark = true;
         },
         ricerca(){
-
             this.utenti.filter((element) => {
                 this.nomi = element.nome;
-                ( this.nomi.indexOf(this.valoreInput.toUpperCase()) > -1 ) ? element.visibile = true : element.visibile = false;
-                console.log(element.nome.indexOf(this.valoreInput.toUpperCase()));
-                console.log(this.nomi);
-                console.log(this.utenti[this.contatoreUtente].visibile);
+                ( this.nomi.indexOf(this.valoreInput.charAt(0).toUpperCase() + this.valoreInput.substr(1).toLowerCase()) > -1 ) ? element.visibile = true : element.visibile = false;
             });
         }
     }

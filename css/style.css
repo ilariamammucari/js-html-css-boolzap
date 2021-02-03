@@ -216,7 +216,7 @@ body {
 
 .box-finestra-chat .finestra .messaggio {
     width: 250px;
-    padding: 20px;
+    padding: 10px 20px;
     border-radius: 15px;
     margin: 10px 0;
     margin-right: 20px;
@@ -225,12 +225,33 @@ body {
     flex-direction: column;
     justify-content: space-around;
     word-break: break-all;
+    position: relative;
 }
 
 .box-finestra-chat .finestra .messaggio small {
     align-self: flex-end;
     margin-top: 5px;
     color: gray;
+}
+
+.box-finestra-chat .finestra .messaggio small i {
+    cursor: pointer;
+}
+
+.box-finestra-chat .finestra .messaggio .dropdown-menu {
+    width: 50%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+    position: absolute;
+    right: 0;
+    top: 35px;
+    text-align: center;
+    padding: 8px 0;
+}
+
+.box-finestra-chat .finestra .messaggio .dropdown-menu p{
+    cursor: pointer;
 }
 
 .box-finestra-chat .finestra .inviato {

@@ -4,6 +4,7 @@ var app = new Vue({
         utenti: [
             {
                 nome: 'Michele',
+                visibile: true,
                 avatar: 'img/avatar_1.jpg',
                 messaggio: [
                     {
@@ -16,6 +17,7 @@ var app = new Vue({
 
             {
                 nome: 'Fabio',
+                visibile: true,
                 avatar: 'img/avatar_2.jpg',
                 messaggio: [
                     {
@@ -33,6 +35,7 @@ var app = new Vue({
 
             {
                 nome: 'Samuele',
+                visibile: true,
                 avatar: 'img/avatar_3.jpg',
                 messaggio: [
                     {
@@ -45,6 +48,7 @@ var app = new Vue({
 
             {
                 nome: 'Antonio',
+                visibile: true,
                 avatar: 'img/avatar_4.jpg',
                 messaggio: [
                     {
@@ -57,6 +61,7 @@ var app = new Vue({
 
             {
                 nome: 'Tommaso',
+                visibile: true,
                 avatar: 'img/avatar_5.jpg',
                 messaggio: [
                     {
@@ -69,6 +74,7 @@ var app = new Vue({
 
             {
                 nome: 'Viviana',
+                visibile: true,
                 avatar: 'img/avatar_6.jpg',
                 messaggio: [
                     {
@@ -81,6 +87,7 @@ var app = new Vue({
 
             {
                 nome: 'Luca',
+                visibile: true,
                 avatar: 'img/avatar_7.jpg',
                 messaggio: [
                     {
@@ -93,39 +100,7 @@ var app = new Vue({
 
             {
                 nome: 'Matteo',
-                avatar: 'img/avatar_8.jpg',
-                messaggio: [
-                    {
-                        data: moment().format('llll'),
-                        testo: 'Ciao',
-                        stato: 'inviato'
-                    }
-                ]
-            },
-            {
-                nome: 'Matteo',
-                avatar: 'img/avatar_8.jpg',
-                messaggio: [
-                    {
-                        data: moment().format('llll'),
-                        testo: 'Ciao',
-                        stato: 'inviato'
-                    }
-                ]
-            },
-            {
-                nome: 'Matteo',
-                avatar: 'img/avatar_8.jpg',
-                messaggio: [
-                    {
-                        data: moment().format('llll'),
-                        testo: 'Ciao',
-                        stato: 'inviato'
-                    }
-                ]
-            },
-            {
-                nome: 'Matteo',
+                visibile: true,
                 avatar: 'img/avatar_8.jpg',
                 messaggio: [
                     {
@@ -138,7 +113,12 @@ var app = new Vue({
         ],
         contatoreUtente: 0,
         testoInput: '',
-        dark: false
+        dark: false,
+        valoreInput: '',
+        nomi: ''
+    },
+    created(){
+        this.ricerca()
     },
     methods: {
         chatDinamica(index){
@@ -154,6 +134,16 @@ var app = new Vue({
         },
         darkMode(){
             ( this.dark ) ? this.dark = false : this.dark = true;
+        },
+        ricerca(){
+
+            this.utenti.filter((element) => {
+                this.nomi = element.nome;
+                ( this.nomi.indexOf(this.valoreInput.toUpperCase()) > -1 ) ? this.visibile = false : this.visibile = true;
+                console.log(element.nome.indexOf(this.valoreInput.toUpperCase()));
+                console.log(this.nomi);
+                console.log(this.utenti[this.contatoreUtente].visibile);
+            });
         }
     }
 });

@@ -128,7 +128,7 @@ body {
 .box-contatti {
     width: 100%;
     flex-grow: 1;
-    overflow-y: scroll;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
 }
@@ -143,8 +143,19 @@ body {
     padding: 10px 0 10px 10px;
     border-bottom: 1px solid lightgrey;
     cursor: pointer;
+    position: relative;
 }
 
+.box-contatti .contatto small {
+    color: grey;
+    position: absolute;
+    bottom: 10%;
+    left: 17%;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 /* * box dx */
 
 /* ! header dx */
@@ -277,4 +288,13 @@ body {
 
 .scuro .contatto:hover {
     background-color: rgb(34, 131, 34);
+}
+
+/* ricerca */
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
 }

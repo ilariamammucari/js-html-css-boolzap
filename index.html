@@ -51,15 +51,16 @@
             <!-- * search bar -->
             <div class="search-bar" :class="(dark ? 'scuro' : 'chiaro' )">
                 <i class="fas fa-search"></i>
-                <input type="text" placeholder="Cerca o inizia una nuova chat...">
+                <input type="text" placeholder="Cerca o inizia una nuova chat..." v-model="valoreInput" @keyup.13="ricerca">
             </div>
             <!-- * /search bar -->
 
             <!-- * box contatti -->
             <div class="box-contatti" :class="(dark ? 'scuro' : 'chiaro' )">
-                <div @click="chatDinamica(index)" v-for="(utente,index) in utenti" class="contatto">
+                <div  v-for="(utente,index) in utenti" class="contatto" @click="chatDinamica(index)" :class="(utente.visibile) ? 'show' : 'hidden'">
                     <img :src="utente.avatar" alt="avatar">
                     {{ utente.nome }}
+                    <small>{{ utente.messaggio[utente.messaggio.length -1].testo }}</small>
                 </div>
             </div>
             <!-- * /box contatti -->
@@ -74,8 +75,8 @@
                 <div class="avatar-contatto">
                     <img :src="utenti[contatoreUtente].avatar" alt="avatar-contatto">
                     <div class="dati-contatto">
-                        Michele
-                        <small>Ultimo accesso oggi alle...</small>
+                        {{ utenti[contatoreUtente].nome }}
+                        <small>Ultimo accesso</small>
                     </div>
                 </div>
                 <div class="icone-contatto">

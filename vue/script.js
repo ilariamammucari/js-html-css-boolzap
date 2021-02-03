@@ -139,7 +139,7 @@ var app = new Vue({
 
             this.utenti.filter((element) => {
                 this.nomi = element.nome;
-                ( this.nomi.indexOf(this.valoreInput.toUpperCase()) > -1 ) ? this.visibile = false : this.visibile = true;
+                ( this.nomi.indexOf(this.valoreInput.toUpperCase()) > -1 ) ? element.visibile = true : element.visibile = false;
                 console.log(element.nome.indexOf(this.valoreInput.toUpperCase()));
                 console.log(this.nomi);
                 console.log(this.utenti[this.contatoreUtente].visibile);

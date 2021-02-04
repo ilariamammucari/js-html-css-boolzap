@@ -135,6 +135,10 @@ var app = new Vue({
         valoreInput: '',
         nomi: ''
     },
+    mounted(){
+        ( moment().format('LT') >= '6:00 PM' ) ? this.dark = true : this.dark = false
+        console.log(moment().format('LT'));
+    },
     methods: {
         chatDinamica(index){
             this.contatoreUtente = index;
@@ -155,7 +159,7 @@ var app = new Vue({
         ricerca(){
             this.utenti.forEach((element) => {
                 this.nomi = element.nome.toLowerCase();
-                ( this.nomi.indexOf(this.valoreInput.toLowerCase()) > -1 ) ? element.visibile = true : element.visibile = false;
+                ( this.nomi.indexOf(this.valoreInput.toLowerCase()) > -1 ) ? element.visibile = true : element.visibile = false
             });
         },
         visualizzaMenu(index){

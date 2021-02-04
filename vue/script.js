@@ -135,9 +135,6 @@ var app = new Vue({
         valoreInput: '',
         nomi: ''
     },
-    created(){
-        this.visualizzaMenu();
-    },
     methods: {
         chatDinamica(index){
             this.contatoreUtente = index;
@@ -159,14 +156,21 @@ var app = new Vue({
                 ( this.nomi.indexOf(this.valoreInput.toLowerCase()) > -1 ) ? element.visibile = true : element.visibile = false;
             });
         },
-        visualizzaMenu(index){
-
-            // ( this.utenti[this.contatoreUtente].messaggio.menu == 'hidden' ) ? this.utenti[this.contatoreUtente].messaggio.menu = 'show' : this.utenti[this.contatoreUtente].messaggio.menu = 'hidden'
-            this.utenti[this.contatoreUtente].messaggio.forEach((element) => {
-                ( element.menu == 'hidden' ) ? element.menu = 'show' : element.menu = 'hidden';
-            console.log(element.menu)
-            });
-        },
+        // visualizzaMenu(index){
+        //     // this.utenti[this.contatoreUtente].messaggio.forEach((element) => {
+        //     //     ( element.menu == 'hidden' ) ? element.menu = 'show' : element.menu = 'hidden';
+        //     // console.log(element.menu)
+        //     // });
+        //     let element = document.getElementById('prova');
+        //     if ( element.classList.contains('hidden') ){
+        //     element.classList.remove('hidden');
+        //     element.classList.add('show');
+        //     } else {
+        //         element.classList.remove('show');
+        //         element.classList.add('hidden');
+        //     }
+        //     console.log(element);
+        // },
         eliminaMessaggio(index){
             this.utenti[this.contatoreUtente].messaggio.splice(index, 1);
         }

@@ -251,7 +251,7 @@ body {
     opacity: 1;
 }
 
-/* .box-finestra-chat .finestra .messaggio .dropdown-menu {
+.box-finestra-chat .finestra .messaggio .dropdown-menu {
     width: 50%;
     background-color: #fff;
     border-radius: 10px;
@@ -262,11 +262,11 @@ body {
     text-align: center;
     padding: 8px 0;
     cursor: pointer;
-} */
+}
 
-/* .box-finestra-chat .finestra .messaggio .dropdown-menu p{
+.box-finestra-chat .finestra .messaggio .dropdown-menu p{
     cursor: pointer;
-} */
+}
 
 .box-finestra-chat .finestra .inviato {
     background-color: rgb(103, 212, 103);

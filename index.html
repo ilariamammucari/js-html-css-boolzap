@@ -92,15 +92,15 @@
             <div class="box-finestra-chat">
                 <div class="finestra">
                     <div v-for="(mex,index) in utenti[contatoreUtente].messaggio" class="messaggio" :class="(mex.stato == 'ricevuto') ? 'ricevuto' : 'inviato'">
-                        <small @click="eliminaMessaggio(index)">
-                            <!-- <i class="fas fa-chevron-down"></i> -->
-                            <i title="Elimina messaggio" class="fas fa-times"></i>
+                        <small @click="visualizzaMenu(index)">
+                            <i class="fas fa-chevron-down"></i>
+                            <!-- <i title="Elimina messaggio" class="fas fa-times"></i> -->
                         </small>
                         {{ mex.testo }}
                         <small>{{ mex.data }}</small>
-                        <!-- <div class="dropdown-menu" :class="mex.menu">
+                        <div @click="eliminaMessaggio(index)" class="dropdown-menu" :class="mex.menu">
                             {{ mex.elimina }}
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>

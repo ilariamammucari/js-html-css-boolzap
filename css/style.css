@@ -61,6 +61,10 @@ body {
     cursor: pointer;
 }
 
+.header-sx .icone-header i:first-child {
+    color: black;
+}
+
 
 /* ! notifiche */
 .notifiche {
@@ -324,6 +328,10 @@ body {
 
 .scuro .contatto:hover {
     background-color: rgb(34, 131, 34);
+}
+
+.header-sx.scuro .icone-header i:first-child{
+    color: #fff;
 }
 
 /* ricerca */

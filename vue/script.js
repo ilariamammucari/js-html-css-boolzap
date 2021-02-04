@@ -163,7 +163,7 @@ var app = new Vue({
             });
         },
         visualizzaMenu(index){
-            this.utenti[this.contatoreUtente].messaggio[index].menu = ( this.utenti[this.contatoreUtente].messaggio[index].menu == 'hidden' ) ?  'show' : 'hidden'
+            this.utenti[this.contatoreUtente].messaggio[index].menu = ( this.utenti[this.contatoreUtente].messaggio[index].menu == 'hidden' ) ?  'show' : 'hidden';
         },
         eliminaMessaggio(index){
             this.utenti[this.contatoreUtente].messaggio.splice(index, 1);

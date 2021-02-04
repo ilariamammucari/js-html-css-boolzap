@@ -8,7 +8,7 @@ var app = new Vue({
                 avatar: 'img/avatar_1.jpg',
                 messaggio: [
                     {
-                        data: moment().format('llll'),
+                        data: moment().calendar(),
                         testo: 'Ciao',
                         stato: 'inviato',
                         elimina: 'Elimina',
@@ -23,14 +23,14 @@ var app = new Vue({
                 avatar: 'img/avatar_2.jpg',
                 messaggio: [
                     {
-                        data: moment().format('llll'),
+                        data: moment().calendar(),
                         testo: 'Ciao,come stai?',
                         stato: 'ricevuto',
                         elimina: 'Elimina',
                         menu: 'hidden'
                     },
                     {
-                        data: moment().format('llll'),
+                        data: moment().calendar(),
                         testo: 'Tutto bene! E tu?',
                         stato: 'inviato',
                         elimina: 'Elimina',
@@ -45,7 +45,7 @@ var app = new Vue({
                 avatar: 'img/avatar_3.jpg',
                 messaggio: [
                     {
-                        data: moment().format('llll'),
+                        data: moment().calendar(),
                         testo: 'Ciao',
                         stato: 'inviato',
                         elimina: 'Elimina',
@@ -60,7 +60,7 @@ var app = new Vue({
                 avatar: 'img/avatar_4.jpg',
                 messaggio: [
                     {
-                        data: moment().format('llll'),
+                        data: moment().calendar(),
                         testo: 'Ciao',
                         stato: 'inviato',
                         elimina: 'Elimina',
@@ -75,7 +75,7 @@ var app = new Vue({
                 avatar: 'img/avatar_5.jpg',
                 messaggio: [
                     {
-                        data: moment().format('llll'),
+                        data: moment().calendar(),
                         testo: 'Ciao,Come stai?',
                         stato: 'ricevuto',
                         elimina: 'Elimina',
@@ -90,7 +90,7 @@ var app = new Vue({
                 avatar: 'img/avatar_6.jpg',
                 messaggio: [
                     {
-                        data: moment().format('llll'),
+                        data: moment().calendar(),
                         testo: 'Ciao',
                         stato: 'inviato',
                         elimina: 'Elimina',
@@ -105,7 +105,7 @@ var app = new Vue({
                 avatar: 'img/avatar_7.jpg',
                 messaggio: [
                     {
-                        data: moment().format('llll'),
+                        data: moment().calendar(),
                         testo: 'Ciao,come stai?',
                         stato: 'inviato',
                         elimina: 'Elimina',
@@ -120,7 +120,7 @@ var app = new Vue({
                 avatar: 'img/avatar_8.jpg',
                 messaggio: [
                     {
-                        data: moment().format('llll'),
+                        data: moment().calendar(),
                         testo: 'Ciao',
                         stato: 'inviato',
                         elimina: 'Elimina',
@@ -140,12 +140,14 @@ var app = new Vue({
             this.contatoreUtente = index;
         },
         inserimentoInput(){
-            this.utenti[this.contatoreUtente].messaggio.push( {testo: this.testoInput, data: moment().format('llll'), stato: 'inviato', elimina: 'Elimina', menu: 'hidden'} );
-            this.testoInput = '';
-            setTimeout(this.funzioneRisposta,1000);
+            if ( this.testoInput.length ){
+                this.utenti[this.contatoreUtente].messaggio.push( {testo: this.testoInput, data: moment().calendar(), stato: 'inviato', elimina: 'Elimina', menu: 'hidden'} );
+                this.testoInput = '';
+                setTimeout(this.funzioneRisposta,1000);
+            }
         },
         funzioneRisposta(){
-            this.utenti[this.contatoreUtente].messaggio.push( {testo: 'ok', data: moment().format('llll'), stato: 'ricevuto', elimina: 'Elimina', menu: 'hidden'} );
+            this.utenti[this.contatoreUtente].messaggio.push( {testo: 'ok', data: moment().calendar(), stato: 'ricevuto', elimina: 'Elimina', menu: 'hidden'} );
         },
         darkMode(){
             ( this.dark ) ? this.dark = false : this.dark = true;

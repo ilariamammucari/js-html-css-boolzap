@@ -264,8 +264,9 @@ body {
     cursor: pointer;
 }
 
-.box-finestra-chat .finestra .messaggio .dropdown-menu p{
+.box-finestra-chat .finestra .messaggio .dropdown-menu p:hover {
     cursor: pointer;
+    color: red;
 }
 
 .box-finestra-chat .finestra .inviato {

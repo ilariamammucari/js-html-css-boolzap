@@ -11,7 +11,8 @@ var app = new Vue({
                         data: moment().format('llll'),
                         testo: 'Ciao',
                         stato: 'inviato',
-                        elimina: 'Elimina'
+                        elimina: 'Elimina',
+                        menu: 'hidden'
                     }
                 ]
             },
@@ -25,13 +26,15 @@ var app = new Vue({
                         data: moment().format('llll'),
                         testo: 'Ciao,come stai?',
                         stato: 'ricevuto',
-                        elimina: 'Elimina'
+                        elimina: 'Elimina',
+                        menu: 'hidden'
                     },
                     {
                         data: moment().format('llll'),
                         testo: 'Tutto bene! E tu?',
                         stato: 'inviato',
-                        elimina: 'Elimina'
+                        elimina: 'Elimina',
+                        menu: 'hidden'
                     }
                 ]
             },
@@ -45,7 +48,8 @@ var app = new Vue({
                         data: moment().format('llll'),
                         testo: 'Ciao',
                         stato: 'inviato',
-                        elimina: 'Elimina'
+                        elimina: 'Elimina',
+                        menu: 'hidden'
                     }
                 ]
             },
@@ -59,7 +63,8 @@ var app = new Vue({
                         data: moment().format('llll'),
                         testo: 'Ciao',
                         stato: 'inviato',
-                        elimina: 'Elimina'
+                        elimina: 'Elimina',
+                        menu: 'hidden'
                     }
                 ]
             },
@@ -73,7 +78,8 @@ var app = new Vue({
                         data: moment().format('llll'),
                         testo: 'Ciao,Come stai?',
                         stato: 'ricevuto',
-                        elimina: 'Elimina'
+                        elimina: 'Elimina',
+                        menu: 'hidden'
                     }
                 ]
             },
@@ -87,7 +93,8 @@ var app = new Vue({
                         data: moment().format('llll'),
                         testo: 'Ciao',
                         stato: 'inviato',
-                        elimina: 'Elimina'
+                        elimina: 'Elimina',
+                        menu: 'hidden'
                     }
                 ]
             },
@@ -101,7 +108,8 @@ var app = new Vue({
                         data: moment().format('llll'),
                         testo: 'Ciao,come stai?',
                         stato: 'inviato',
-                        elimina: 'Elimina'
+                        elimina: 'Elimina',
+                        menu: 'hidden'
                     }
                 ]
             },
@@ -116,6 +124,7 @@ var app = new Vue({
                         testo: 'Ciao',
                         stato: 'inviato',
                         elimina: 'Elimina',
+                        menu: 'hidden'
                     }
                 ]
             }
@@ -124,32 +133,39 @@ var app = new Vue({
         testoInput: '',
         dark: false,
         valoreInput: '',
-        nomi: '',
-        menu: 'hidden'
+        nomi: ''
+    },
+    created(){
+        this.visualizzaMenu();
     },
     methods: {
         chatDinamica(index){
             this.contatoreUtente = index;
         },
         inserimentoInput(){
-            this.utenti[this.contatoreUtente].messaggio.push( {testo: this.testoInput, data: moment().format('llll'), stato: 'inviato', elimina: 'Elimina'} );
+            this.utenti[this.contatoreUtente].messaggio.push( {testo: this.testoInput, data: moment().format('llll'), stato: 'inviato', elimina: 'Elimina', menu: 'hidden'} );
             this.testoInput = '';
             setTimeout(this.funzioneRisposta,1000);
         },
         funzioneRisposta(){
-            this.utenti[this.contatoreUtente].messaggio.push( {testo: 'ok', data: moment().format('llll'), stato: 'ricevuto', elimina: 'Elimina'} );
+            this.utenti[this.contatoreUtente].messaggio.push( {testo: 'ok', data: moment().format('llll'), stato: 'ricevuto', elimina: 'Elimina', menu: 'hidden'} );
         },
         darkMode(){
             ( this.dark ) ? this.dark = false : this.dark = true;
         },
         ricerca(){
-            this.utenti.filter((element) => {
-                this.nomi = element.nome;
-                ( this.nomi.indexOf(this.valoreInput.charAt(0).toUpperCase() + this.valoreInput.substr(1).toLowerCase()) > -1 ) ? element.visibile = true : element.visibile = false;
+            this.utenti.forEach((element) => {
+                this.nomi = element.nome.toLowerCase();
+                ( this.nomi.indexOf(this.valoreInput.toLowerCase()) > -1 ) ? element.visibile = true : element.visibile = false;
             });
         },
-        visualizzaMenu(){
-            ( this.menu == 'hidden' ) ? this.menu = 'show' : this.menu = 'hidden';
+        visualizzaMenu(index){
+
+            // ( this.utenti[this.contatoreUtente].messaggio.menu == 'hidden' ) ? this.utenti[this.contatoreUtente].messaggio.menu = 'show' : this.utenti[this.contatoreUtente].messaggio.menu = 'hidden'
+            this.utenti[this.contatoreUtente].messaggio.forEach((element) => {
+                ( element.menu == 'hidden' ) ? element.menu = 'show' : element.menu = 'hidden';
+            console.log(element.menu)
+            });
         },
         eliminaMessaggio(index){
             this.utenti[this.contatoreUtente].messaggio.splice(index, 1);

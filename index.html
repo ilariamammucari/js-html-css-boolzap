@@ -60,7 +60,8 @@
                 <div  v-for="(utente,index) in utenti" class="contatto" @click="chatDinamica(index)" :class="(utente.visibile) ? 'show' : 'hidden'">
                     <img :src="utente.avatar" alt="avatar">
                     {{ utente.nome }}
-                    <small v-if="utente.messaggio.length">{{ utente.messaggio[utente.messaggio.length -1].testo + ' ' + utente.messaggio[utente.messaggio.length -1].data}}</small>
+                    <small v-if="utente.messaggio.length">{{ utente.messaggio[utente.messaggio.length -1].testo}}</small>
+                    <small v-if="utente.messaggio.length"> {{utente.messaggio[utente.messaggio.length -1].data}}</small>
                 </div>
             </div>
             <!-- * /box contatti -->
@@ -94,7 +95,7 @@
                         <small @click="visualizzaMenu"><i class="fas fa-chevron-down"></i></small>
                         {{ mex.testo }}
                         <small>{{ mex.data }}</small>
-                        <div @click="eliminaMessaggio(index)" class="dropdown-menu" :class="menu">
+                        <div @click="eliminaMessaggio(index)" class="dropdown-menu" :class="mex.menu">
                             {{ mex.elimina }}
                         </div>
                     </div>

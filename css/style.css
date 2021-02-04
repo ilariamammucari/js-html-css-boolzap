@@ -151,10 +151,18 @@ body {
     position: absolute;
     bottom: 10%;
     left: 17%;
+}
+
+.box-contatti .contatto small:first-child {
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+.box-contatti .contatto small:last-child{
+    bottom: 10%;
+    left: 60%;
 }
 /* * box dx */
 
@@ -236,6 +244,11 @@ body {
 
 .box-finestra-chat .finestra .messaggio small i {
     cursor: pointer;
+    opacity: 0;
+}
+
+.box-finestra-chat .finestra .messaggio:hover small i {
+    opacity: 1;
 }
 
 .box-finestra-chat .finestra .messaggio .dropdown-menu {

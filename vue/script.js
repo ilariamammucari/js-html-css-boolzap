@@ -136,8 +136,8 @@ var app = new Vue({
         nomi: ''
     },
     mounted(){
-        ( moment().format('LT') >= '6:00 PM' ) ? this.dark = true : this.dark = false
-        console.log(moment().format('LT'));
+        // ( moment().format('LT') >= '6:00 PM' ) ? this.dark = true : this.dark = false
+        this.dark = ( moment().format('LT') >= '6:00 PM' ) ? true : false;
     },
     methods: {
         chatDinamica(index){
@@ -154,16 +154,16 @@ var app = new Vue({
             this.utenti[this.contatoreUtente].messaggio.push( {testo: 'ok', data: moment().calendar(), stato: 'ricevuto', elimina: 'Elimina', menu: 'hidden'} );
         },
         darkMode(){
-            ( this.dark ) ? this.dark = false : this.dark = true;
+            this.dark = ( this.dark ) ? false : true;
         },
         ricerca(){
             this.utenti.forEach((element) => {
                 this.nomi = element.nome.toLowerCase();
-                ( this.nomi.indexOf(this.valoreInput.toLowerCase()) > -1 ) ? element.visibile = true : element.visibile = false
+                element.visibile = ( this.nomi.indexOf(this.valoreInput.toLowerCase()) > -1 ) ? true : false;
             });
         },
         visualizzaMenu(index){
-            ( this.utenti[this.contatoreUtente].messaggio[index].menu == 'hidden' ) ? this.utenti[this.contatoreUtente].messaggio[index].menu = 'show' : this.utenti[this.contatoreUtente].messaggio[index].menu = 'hidden'
+            this.utenti[this.contatoreUtente].messaggio[index].menu = ( this.utenti[this.contatoreUtente].messaggio[index].menu == 'hidden' ) ?  'show' : 'hidden'
         },
         eliminaMessaggio(index){
             this.utenti[this.contatoreUtente].messaggio.splice(index, 1);
